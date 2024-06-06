@@ -1,0 +1,76 @@
+\documentclass[a4paper,10pt]{article}
+%\documentclass[a4paper,10pt]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[total={7.5in, 11in}]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\title{Formule GAL}
+\author{Nicolò Luigi Allegris}
+\date{}
+
+\pdfinfo{%
+  /Title    (Formule GAL)
+  /Author   (Nicolò Luigi Allegris)
+  /Creator  (Nicolò Luigi Allegris)
+  /Producer (Nicolò Luigi Allegris)
+  /Subject  (Geometria e Algebra Lineare)
+  /Keywords ()
+}
+
+\begin{document}
+\maketitle
+
+\paragraph{Matrici Simili} Due matrici $A, A' \in {\cal{M}}_{n,n}(\mathbb{K})$
+si chiamano simili se $\exists P \in {\cal{M}}_{n.n}(\mathbb{K})$ invertibile,
+t.c. $A' = P \cdot A \cdot P^{-1}$.
+\subparagraph{Prop} Matrici simili hanno lo stesso determinante.
+
+\paragraph{Endomorfismo} Un endomorfismo di $U$ è un applicazione lineare $f: U
+\rightarrow U$.
+
+\subparagraph{Determinante di un endomorfismo} Sia $f: U \rightarrow U$
+endomorfismo, Il determinante di $f$ è dato da
+$det\left({\cal{M}}_{\beta}^{\beta}\left(f\right)\right)$ dove $\beta$ è una
+base di $U$.
+
+\subparagraph{Determinante di una composta} Siano $f,g: U \rightarrow U$
+endomorfismi, allora $det\left(f \circ g \right) = det\left(f \right) \cdot
+det\left(g \right)$
+
+\subparagraph{Prop} $f: U \rightarrow U$ isomorfismo $\Leftrightarrow
+det\left(f\right) \neq 0$
+
+\paragraph{Diagonalizzazione} Dato un endomorfismo $f: V \rightarrow V$ bisogna
+trovare una base $\beta$ di $V$ adattata a $f$, cioè tale che la matrice di $f$
+rispetto a $\beta$ sia diagonale.
+$${\cal M}_\beta^\beta\left(f\right) =
+\begin{pmatrix}
+\alpha_1 & \cdots & 0 \\
+\vdots & \ddots & \vdots \\
+0 & \ldots & \alpha_n
+\end{pmatrix}$$
+rendendo in questo modo il calcolo di $f$ con prodotto matriciale della sua
+matrice associata facile. \\
+Una matrice è diagonalizzabile se e solo se è simile a una matrice diagonale.
+
+\paragraph{Autovalori e Autovettori} Sia $f: U \rightarrow U$ un endomorfismo.
+\begin{enumerate}
+  \item Uno scalare $k \in \mathbb{K}$ si chiama autovalore di $f$ se
+$\exists v \in V$ non nullo t.c. $f\left(v\right) = \alpha v$
+  \item Un vettore $V \in V$ si chiama autovettore di $f$ se
+$v \neq 0$ e $\exists \alpha \in \mathbb{K}$ t.c. $f\left(v\right) = \alpha v$
+\end{enumerate}
+
+\subparagraph{Oss} Diagonalizzare $f$ equivale a trovare una base formata di
+autovettori.
+
+\subparagraph{Oss} $0$ autovalore $\Leftrightarrow ker\left(f\right) \neq 0
+\Leftrightarrow f$ non è un isomorfismo.
+
+\paragraph{Teorema} Sia $f: V \rightarrow V$ un endomorfismo. Siano $v_1, ...,
+v_k \in V$ autovettori di $f$ corrispondenti ad autovalori distinti $\alpha_1,
+..., \alpha_k$. Allora $v_1, ..., v_k$ sono linearmente indipendenti.
+\end{document}

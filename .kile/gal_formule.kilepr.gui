@@ -1,0 +1,19 @@
+[General]
+kile_livePreviewEnabled=true
+kile_livePreviewStatusUserSpecified=false
+kile_livePreviewTool=LivePreview-PDFLaTeX
+lastDocument=main.tex
+
+[item:gal_formule.kilepr]
+open=false
+order=-1
+
+[item:main.tex]
+open=true
+order=0
+
+[view-settings,view=0,item:main.tex]
+CursorColumn=69
+CursorLine=74
+Dynamic Word Wrap=false
+ScrollLine=35
