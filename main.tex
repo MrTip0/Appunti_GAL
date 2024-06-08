@@ -2,23 +2,23 @@
 %\documentclass[a4paper,10pt]{scrartcl}
 
 \usepackage[utf8]{inputenc}
-\usepackage[total={7.5in, 11in}]{geometry}
+\usepackage[total={7.5in, 10in}]{geometry}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 
-\title{Formule GAL}
+\title{Appunti GAL}
 \author{Nicolò Luigi Allegris}
 \date{}
 
-\pdfinfo{%
-  /Title    (Formule GAL)
-  /Author   (Nicolò Luigi Allegris)
-  /Creator  (Nicolò Luigi Allegris)
-  /Producer (Nicolò Luigi Allegris)
-  /Subject  (Geometria e Algebra Lineare)
-  /Keywords ()
-}
+% \pdfinfo{%
+%   /Title    (Appunti GAL)
+%   /Author   (Nicolò Luigi Allegris)
+%   /Creator  (Nicolò Luigi Allegris)
+%   /Producer (Nicolò Luigi Allegris)
+%   /Subject  (Geometria e Algebra Lineare)
+%   /Keywords ()
+% }
 
 \begin{document}
 \maketitle
@@ -43,15 +43,16 @@ det\left(g \right)$
 \subparagraph{Prop} $f: U \rightarrow U$ isomorfismo $\Leftrightarrow
 det\left(f\right) \neq 0$
 
-\paragraph{Diagonalizzazione} Dato un endomorfismo $f: V \rightarrow V$ bisogna
-trovare una base $\beta$ di $V$ adattata a $f$, cioè tale che la matrice di $f$
-rispetto a $\beta$ sia diagonale.
-$${\cal M}_\beta^\beta\left(f\right) =
+\section{Diagonalizzazione}
+Dato un endomorfismo $f: V \rightarrow V$ bisogna trovare una base $\beta$ di
+$V$ adattata a $f$, cioè tale che la matrice di $f$ rispetto a $\beta$ sia
+diagonale.
+\[{\cal M}_\beta^\beta\left(f\right) =
 \begin{pmatrix}
 \alpha_1 & \cdots & 0 \\
 \vdots & \ddots & \vdots \\
 0 & \ldots & \alpha_n
-\end{pmatrix}$$
+\end{pmatrix}\]
 rendendo in questo modo il calcolo di $f$ con prodotto matriciale della sua
 matrice associata facile. \\
 Una matrice è diagonalizzabile se e solo se è simile a una matrice diagonale.
@@ -73,4 +74,55 @@ autovettori.
 \paragraph{Teorema} Sia $f: V \rightarrow V$ un endomorfismo. Siano $v_1, ...,
 v_k \in V$ autovettori di $f$ corrispondenti ad autovalori distinti $\alpha_1,
 ..., \alpha_k$. Allora $v_1, ..., v_k$ sono linearmente indipendenti.
+
+\subsection{Come trovare autovalori}
+\paragraph{Oss} $\alpha \in \mathbb{K}$ autovalore $\Leftrightarrow \exists
+v \in V, v \neq 0, t.c. f\left(v\right) = \alpha v \Leftrightarrow \exists v
+\neq 0 t.c. \left(f-\alpha \cdot id_V\right)\left(v\right) = 0 \Leftrightarrow
+ker\left(f-\alpha \cdot id_V\right) \neq 0 \Leftrightarrow det\left(f-\alpha
+\cdot id_V\right) = 0$.
+
+\paragraph{Prop} Sia $n = dim V \in \mathbb{N}$, allora $det\left(f -
+x \cdot id_V\right)$ è un polinomio in $x$ di grado $n$. Inoltre
+\[det\left(f - x \cdot id_V\right) = (-1)^n x^n + a_{n-1}x^{n-1} + ... + a_1 x
++ det\left(f\right)\]
+dove $a_{n-1},...,a_1 \in \mathbb{K}$
+
+\paragraph{Polinomio caratteristico} ${\cal
+X}_f\left(x\right) = det\left(f-x\cdot id_V\right) \in
+\mathbb{K}\left[x\right]$ è il polinomio caratteristico di $f$.\\
+Per $A \in {\cal M}_{n,n}\left(\mathbb{K}\right)$ il polinomio caratteristico
+di $A$ è ${\cal X}_A\left(x\right) = det\left(A - x \cdot I_n\right)$.
+
+\subparagraph{Prop} $\alpha$ è autovalore di $f \Leftrightarrow
+{\cal X}_f\left(\alpha\right) = 0$. ($\alpha$ è autovalore di $A \Leftrightarrow
+{\cal X}_A\left(\alpha\right) = 0$).\\
+$\Rightarrow$ Gli autovalori sono radici del polinomio caratteristico.
+
+\paragraph{Molteplicità} Sia $f: V \rightarrow V$ endomorfismo, con $dim V \in
+\mathbb{N}$ e sia $\alpha \in \mathbb{K}$ un autovalore di $f$.
+\begin{enumerate}
+    \item La molteplicità algebrica di $\alpha$ è il massimo $a \in \mathbb{N}$
+      t.c. $\left(x - \alpha\right)^a$ sia divida ${\cal X}_f\left(x\right)$.
+    \item La molteplicità geometrica di $\alpha$ è $g =
+      dim\left(ker\left(f - \alpha \cdot id_V\right)\right)$ che per il teorema
+      del rango è: $n-rg\left(f - \alpha \cdot id_V\right)$
+    \item $ker\left(f - \alpha\cdot id_V\right) =
+      \left\{\text{autovettori associati a }\alpha\right\} \cup
+      \left\{0\right\}$ sè l'autospazio associato ad $\alpha$.
+\end{enumerate}
+\subparagraph{Prop} $1 \leq g \leq a$
+
+\paragraph{Teorema} \[f \text{ è diagonalizzabile} \Leftrightarrow
+\sum_{i=1}^{n}g_i = n\]
+dove $g_1, ..., g_n$ sono le molteplicità geometriche degli autovalori di $f$.
+
+\subparagraph{Cor} $f$ è diagonalizzabile se e solo se:
+\begin{enumerate}
+    \item ${\cal X}_f\left(x\right) = (-1)^n \prod\limits_{i=1}^{k}
+      \left(x-\alpha_i\right)^{a_i}$, dove $\alpha_i \neq \alpha_j$ per $i \neq
+      j$.
+    \item $g_i = a_i \forall i = 1, ..., k$.
+\end{enumerate}
+
 \end{document}
